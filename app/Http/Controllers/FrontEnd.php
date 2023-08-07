@@ -14,4 +14,12 @@ class FrontEnd extends Controller
         ];
         return view('frontend.home', $data);
     }
+    public function about()
+    {
+        $data['component'] = [
+            'title' => 'About',
+            'menu' => 'Menu'
+        ];
+        return view('frontend.about', $data);
+    }
 }
