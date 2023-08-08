@@ -24,19 +24,20 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
+            <div class="card-header">
                 <div class="row">
-                    <div class="col-md-8 mb-3">
-                        <h5 class="mb-0">Data Blog</h5>
+                    <div class="col-md-9">
+                        <h4 class="mb-0">Data Blog</h4>
                     </div>
-                    <div class="col-md-4">
-                        <a href="{{ route('panel/add_blog') }}" class="btn btn-success" href="javascript:void(0)"
-                            id="createBlog">
+                    <div class="col-md-3 pull-right">
+                        <a href="{{ route('panel/add_blog') }}" class="btn btn-success" id="createBlog">
                             Tambah</a>
-                        <a class="btn btn-primary" href="javascript:void(0)" id="manageKategori" data-bs-toggle="modal"
-                            data-bs-target="#modaldata"> Manage Kategori</a>
+                        <a href="{{ route('panel/manage_kategori') }}" class="btn btn-primary" id="manageKategori"> Manage
+                            Kategori</a>
                     </div>
                 </div>
+            </div>
+            <div class="card-body">
                 <div class="table-responsive">
                     <table id="config-table" class="table border display table-bordered table-striped no-wrap">
                         <thead>
@@ -46,7 +47,7 @@
                                 <th>Title</th>
                                 <th>Total Kunjungan</th>
                                 <th>Created</th>
-                                <th>Tampil?</th>
+                                <th>Aksi</th>
                             </tr>
                             <!-- end row -->
                         </thead>
@@ -58,11 +59,10 @@
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
                                 <td>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input success" type="checkbox" id="success-check"
-                                            value="option1">
-                                        <label class="form-check-label" for="success-check">Ya</label>
-                                    </div>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-primary mb-10 btn-sm editMenu"><i class="ti ti-edit"></i></a>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-danger mb-10 btn-sm"><i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             <!-- end row -->
@@ -73,11 +73,10 @@
                                 <td>Accountant</td>
                                 <td>Tokyo</td>
                                 <td>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input success" type="checkbox" id="success-check"
-                                            value="option1">
-                                        <label class="form-check-label" for="success-check">Ya</label>
-                                    </div>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-primary mb-10 btn-sm editMenu"><i class="ti ti-edit"></i></a>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-danger mb-10 btn-sm"><i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             <!-- end row -->
@@ -88,11 +87,10 @@
                                 <td>Junior Technical Author</td>
                                 <td>San Francisco</td>
                                 <td>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input success" type="checkbox" id="success-check"
-                                            value="option1">
-                                        <label class="form-check-label" for="success-check">Ya</label>
-                                    </div>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-primary mb-10 btn-sm editMenu"><i class="ti ti-edit"></i></a>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-danger mb-10 btn-sm"><i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             <!-- end row -->
@@ -103,11 +101,10 @@
                                 <td>Senior Javascript Developer</td>
                                 <td>Edinburgh</td>
                                 <td>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input success" type="checkbox" id="success-check"
-                                            value="option1">
-                                        <label class="form-check-label" for="success-check">Ya</label>
-                                    </div>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-primary mb-10 btn-sm editMenu"><i class="ti ti-edit"></i></a>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-danger mb-10 btn-sm"><i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             <!-- end row -->
@@ -118,11 +115,10 @@
                                 <td>Accountant</td>
                                 <td>Tokyo</td>
                                 <td>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input success" type="checkbox" id="success-check"
-                                            value="option1">
-                                        <label class="form-check-label" for="success-check">Ya</label>
-                                    </div>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-primary mb-10 btn-sm editMenu"><i class="ti ti-edit"></i></a>
+                                    <a href="javascript:void(0)" data-toggle="tooltip"
+                                        class="btn btn-danger mb-10 btn-sm"><i class="ti ti-trash"></i></a>
                                 </td>
                             </tr>
                             <!-- end row -->

@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontEnd;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ModulesController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,9 @@ Route::controller(ModulesController::class)->group(function () {
     Route::get('panel/product', 'product')->name('panel/product');
     Route::get('panel/blog', 'blog')->name('panel/blog');
     Route::get('panel/add_blog', 'add_blog')->name('panel/add_blog');
+    Route::get('panel/manage_kategori', 'manage_kategori')->name('panel/manage_kategori');
+});
+Route::controller(SettingController::class)->group(function () {
+    Route::get('panel/app_setting', 'app_setting')->name('panel/app_setting');
+    Route::get('panel/user_setting', 'user_setting')->name('panel/user_setting');
 });

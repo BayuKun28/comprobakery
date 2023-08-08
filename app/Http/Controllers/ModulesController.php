@@ -51,4 +51,22 @@ class ModulesController extends Controller
         ];
         return view('backend.modules.add_blog', $data);
     }
+    public function manage_kategori()
+    {
+        $data['component'] = [
+            'title' => 'Modules / Manage Kategori',
+            'menu' => 'Modules',
+            'submenu' => 'Manage Kategori'
+        ];
+        return view('backend.modules.manage_kategori', $data);
+    }
+    public function app_setting()
+    {
+        $data['component'] = [
+            'title' => 'Setting / Application',
+            'menu' => 'Setting',
+            'submenu' => 'Application'
+        ];
+        return view('backend.setting.app_setting', $data);
+    }
 }

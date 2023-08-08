@@ -24,16 +24,14 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
+            <div class="card-header">
                 <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <h5 class="mb-0">Data Product</h5>
+                    <div class="col-md-11">
+                        <h4 class="mb-0">Data Product</h4>
                     </div>
-                    {{-- <div class="col-md-1 text-right">
-                        <a class="btn btn-success" href="javascript:void(0)" id="createNewKategori" data-bs-toggle="modal"
-                            data-bs-target="#modaldata"> Tambah</a>
-                    </div> --}}
                 </div>
+            </div>
+            <div class="card-body">
                 <div class="table-responsive">
                     <table id="config-table" class="table border display table-bordered table-striped no-wrap">
                         <thead>

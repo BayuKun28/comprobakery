@@ -29,30 +29,42 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-md-11">
-                                    <h4 class="mb-0">Setting Home</h4>
+                                <div class="col-md-9">
+                                    <h4 class="mb-0">Aplication Setting</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <center>
-                                            <h3>Slogan / Kata</h3>
-                                        </center><br>
-                                        <div class="form-floating mb-3">
-                                            <style>
-                                                .ck-editor__editable {
-                                                    min-height: 150px !important;
-                                                    max-height: 400px !important;
-                                                }
-                                            </style>
-                                            <div id="editor"></div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="nama_aplikasi" class="form-label">Nama Application</label>
+                                                <input class="form-control" type="text" id="nama_aplikasi"
+                                                    value="COMPRO BAKERY" />
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="formFile" class="form-label">Uploads Cover</label>
-                                            <input class="form-control" type="file" id="formFile" />
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="logo" class="form-label">Logo</label>
+                                                <input class="form-control" type="file" id="logo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="favicon" class="form-label">Favicon</label>
+                                                <input class="form-control" type="file" id="favicon" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="owner" class="form-label">Owner</label>
+                                                <input class="form-control" type="text" id="owner"
+                                                    value="Sample Owner" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -61,7 +73,7 @@
                                                 <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
                                                     <div class="d-flex align-items-center">
                                                         <i class="ti ti-send me-2 fs-4"></i>
-                                                        Submit
+                                                        Simpan
                                                     </div>
                                                 </button>
                                             </div>
