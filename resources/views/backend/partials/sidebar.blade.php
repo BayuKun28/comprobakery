@@ -109,10 +109,10 @@
                         {{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->username }}</h6>
                     <span class="fs-2 text-dark">Admin</span>
                 </div>
-                <button class="border-0 bg-transparent text-primary ms-auto" tabindex="0" type="button"
+                <a href="{{ route('logout') }}" class="border-0 bg-transparent text-primary ms-auto" type="button"
                     aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="logout">
                     <i class="ti ti-power fs-6"></i>
-                </button>
+                </a>
             </div>
         </div>
         <!-- End Sidebar navigation -->

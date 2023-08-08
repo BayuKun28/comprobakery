@@ -30,4 +30,12 @@ class LoginController extends Controller
             'username' => 'Your provided credentials do not match in our records.',
         ])->onlyInput('username');
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('panel')
+            ->withSuccess('You have logged out successfully!');
+    }
 }

@@ -24,16 +24,18 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
+            <div class="card-header">
                 <div class="row">
-                    <div class="col-md-8 mb-3">
-                        <h5 class="mb-0">Data Blog</h5>
+                    <div class="col-md-11">
+                        <h4 class="mb-0">Data Kategori</h4>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-1 pull-right">
                         <a href="#" class="btn btn-success" href="javascript:void(0)" id="createBlog">
                             Tambah</a>
                     </div>
                 </div>
+            </div>
+            <div class="card-body">
                 <div class="table-responsive">
                     <table id="config-table" class="table border display table-bordered table-striped no-wrap">
                         <thead>

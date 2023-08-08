@@ -27,6 +27,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h4 class="mb-0">Posting New Blog</h4>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <form>
                                 <div class="row">

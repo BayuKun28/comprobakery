@@ -30,6 +30,7 @@ Route::controller(FrontEnd::class)->group(function () {
 Route::controller(LoginController::class)->group(function () {
     Route::get('/panel', 'index')->name('panel');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/logout', 'logout')->name('logout');
 });
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/panel/dashboard', 'index')->name('dashboard');
