@@ -10,7 +10,7 @@
 <!-- Offcanvas Menu End -->
 
 <!-- Header Section Begin -->
-<header class="header">
+<header class="header" style="background-color: rgb(255, 145, 0);">
     <div class="header__top">
         <div class="container">
             <div class="row">

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontEnd;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ModulesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +25,14 @@ Route::controller(FrontEnd::class)->group(function () {
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/detail_blog', 'detail_blog')->name('detail_blog');
     Route::get('/contact', 'contact')->name('contact');
+});
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/panel', 'index')->name('panel');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+});
+Route::controller(DashboardController::class)->group(function () {
+    Route::get('/panel/dashboard', 'index')->name('dashboard');
+});
+Route::controller(ModulesController::class)->group(function () {
+    Route::get('panel/home', 'home')->name('panel/home');
 });
