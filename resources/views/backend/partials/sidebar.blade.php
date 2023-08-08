@@ -16,16 +16,10 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar>
             <ul id="sidebarnav">
-                <!-- ============================= -->
-                <!-- Home -->
-                <!-- ============================= -->
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Menu</span>
                 </li>
-                <!-- =================== -->
-                <!-- Dashboard -->
-                <!-- =================== -->
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
@@ -51,7 +45,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="blog-detail.html" class="sidebar-link">
+                            <a href="{{ route('panel/about') }}" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-circle"></i>
                                 </div>
@@ -59,7 +53,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="blog-posts.html" class="sidebar-link">
+                            <a href="{{ route('panel/product') }}" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-circle"></i>
                                 </div>
@@ -67,7 +61,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="blog-detail.html" class="sidebar-link">
+                            <a href="{{ route('panel/blog') }}" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-circle"></i>
                                 </div>

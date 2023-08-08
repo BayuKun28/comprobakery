@@ -19,6 +19,7 @@
     <link rel="shortcut icon" type="image/png" href="{{ asset('backend/') }}/images/logos/favicon.png" />
     <!-- Core Css -->
     <link id="themeColors" rel="stylesheet" href="{{ asset('backend/') }}/css/style.min.css" />
+    <link rel="stylesheet" href="{{ asset('backend/') }}/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body>

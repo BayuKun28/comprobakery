@@ -538,9 +538,9 @@
  <!-- current page js files -->
  <script src="{{ asset('backend/') }}/libs/apexcharts/dist/apexcharts.min.js"></script>
  <script src="{{ asset('backend/') }}/js/dashboard5.js"></script>
+ <script src="{{ asset('backend/') }}/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+ <script src="{{ asset('backend/') }}/js/datatable/datatable-basic.init.js"></script>
  @yield('addjs')
  </body>
-
- <!-- Mirrored from demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/html/main/index5.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Apr 2023 13:01:21 GMT -->
 
  </html>

@@ -35,4 +35,8 @@ Route::controller(DashboardController::class)->group(function () {
 });
 Route::controller(ModulesController::class)->group(function () {
     Route::get('panel/home', 'home')->name('panel/home');
+    Route::get('panel/about', 'about')->name('panel/about');
+    Route::get('panel/product', 'product')->name('panel/product');
+    Route::get('panel/blog', 'blog')->name('panel/blog');
+    Route::get('panel/add_blog', 'add_blog')->name('panel/add_blog');
 });
