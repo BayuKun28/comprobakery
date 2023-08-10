@@ -536,10 +536,9 @@
  <script src="{{ asset('backend/') }}/js/sidebarmenu.js"></script>
  <script src="{{ asset('backend/') }}/js/custom.js"></script>
  <!-- current page js files -->
- <script src="{{ asset('backend/') }}/libs/apexcharts/dist/apexcharts.min.js"></script>
- <script src="{{ asset('backend/') }}/js/dashboard5.js"></script>
  <script src="{{ asset('backend/') }}/libs/datatables.net/js/jquery.dataTables.min.js"></script>
  <script src="{{ asset('backend/') }}/js/datatable/datatable-basic.init.js"></script>
+ <script src="{{ asset('sweetalert/') }}/dist/sweetalert2.min.js"></script>
  @yield('addjs')
  </body>
 

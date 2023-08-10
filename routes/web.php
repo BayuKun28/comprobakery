@@ -37,6 +37,12 @@ Route::controller(DashboardController::class)->group(function () {
 });
 Route::controller(ModulesController::class)->group(function () {
     Route::get('panel/home', 'home')->name('panel/home');
+    Route::post('panel/addhome', 'addhome')->name('addhome');
+    Route::get('get_ajax_list_home', 'get_ajax_list_home')->name('get_ajax_list_home');
+    Route::get('home_edit/{id}', 'home_edit')->name('home_edit');
+    Route::post('home_edit_save/{id}', 'home_edit_save')->name('home_edit_save');
+    Route::get('home_delete/{id}', 'home_delete')->name('home_delete');
+    Route::post('home_switch/{id}', 'home_switch')->name('home_switch');
     Route::get('panel/about', 'about')->name('panel/about');
     Route::get('panel/product', 'product')->name('panel/product');
     Route::get('panel/blog', 'blog')->name('panel/blog');

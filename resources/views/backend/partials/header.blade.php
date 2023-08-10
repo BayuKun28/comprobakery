@@ -5,6 +5,7 @@
 
 <head>
     <!--  Title -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $component['title'] }}</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -20,6 +21,7 @@
     <!-- Core Css -->
     <link id="themeColors" rel="stylesheet" href="{{ asset('backend/') }}/css/style.min.css" />
     <link rel="stylesheet" href="{{ asset('backend/') }}/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link href="{{ asset('sweetalert/') }}/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body>

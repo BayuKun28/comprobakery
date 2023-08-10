@@ -24,78 +24,102 @@
             </div>
         </div>
         <section>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <h4 class="mb-0">Setting Home</h4>
-                                </div>
-                            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h4 class="mb-0">Data Home</h4>
                         </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <center>
-                                            <h3>Slogan / Kata</h3>
-                                        </center><br>
-                                        <div class="form-floating mb-3">
-                                            <style>
-                                                .ck-editor__editable {
-                                                    min-height: 150px !important;
-                                                    max-height: 400px !important;
-                                                }
-                                            </style>
-                                            <div id="editor"></div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="formFile" class="form-label">Uploads Cover</label>
-                                            <input class="form-control" type="file" id="formFile" />
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="d-md-flex align-items-center mt-3">
-                                            <div class="ms-auto mt-3 mt-md-0">
-                                                <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
-                                                    <div class="d-flex align-items-center">
-                                                        <i class="ti ti-send me-2 fs-4"></i>
-                                                        Submit
-                                                    </div>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="col-md-1 pull-right">
+                            <a class="btn btn-success" href="javascript:void(0)" id="createMenu"> Tambah</a>
                         </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="mytable" class="table border display table-bordered table-striped no-wrap">
+                            <thead>
+                                <!-- start row -->
+                                <tr>
+                                    <th>No</th>
+                                    <th>Slogan / Kata</th>
+                                    <th>Cover</th>
+                                    <th>Aksi</th>
+                                    <th>Is Active?</th>
+                                </tr>
+                                <!-- end row -->
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="modal fade" id="ajaxModel" tabindex="-1" aria-labelledby="ajaxModel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header d-flex align-items-center">
+                        <h4 class="modal-title" id="modal-title">
+                            Tambah Home
+                        </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="homeForm" name="homeForm" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <center>
+                                        <h3>Slogan / Kata</h3>
+                                    </center><br>
+                                    <div class="form-floating mb-3">
+                                        <style>
+                                            .ck-editor__editable {
+                                                min-height: 150px !important;
+                                                max-height: 400px !important;
+                                            }
+                                        </style>
+                                        <input type="hidden" name="id_home" id="id_home">
+                                        <textarea rows="20" cols="70" class="ckeditor" id="slogan" name="slogan"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <center><img id="preview-image" width="250px"></center>
+                                        <label for="cover" class="form-label">Uploads Cover</label>
+                                        <input class="form-control" type="file" id="cover" name="cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-info font-medium rounded-pill px-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti ti-send me-2 fs-4"></i>
+                                    Save Changed
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-light-danger text-danger font-medium ounded-pill px-4"
+                                data-bs-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
     </div>
 @endsection
 @section('addjs')
-    <script src="{{ asset('backend/') }}/js/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
-                minHeight: '300px',
-                toolbar: {
-                    items: [
-                        'undo', 'redo',
-                        '|', 'heading',
-                        '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
-                        '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
-                        '|', 'link', 'blockQuote', 'codeBlock',
-                        '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
-                    ],
-                    shouldNotGroupWhenFull: false
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            });
+    <script type="text/javascript">
+        let urlStore = "{{ route('addhome') }}";
+        let urldata = "{{ route('get_ajax_list_home') }}";
+        var urledit = "{{ route('home_edit', ['id' => ':id']) }}";
+        var urleditsave = "{{ route('home_edit_save', ['id' => ':id']) }}";
+        var urldelete = "{{ route('home_delete', ['id' => ':id']) }}";
+        var urlswitch = "{{ route('home_switch', ['id' => ':id']) }}";
+        var urlimage = "{{ asset('images') }}";
     </script>
+    <script src="{{ asset('backend/') }}/js/ckeditor.js"></script>
+    <script src="{{ asset('backend/') }}/js/home.js"></script>
 @endsection

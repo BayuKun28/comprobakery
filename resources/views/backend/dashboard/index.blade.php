@@ -211,3 +211,7 @@
         <!-- container-fluid over -->
     </div>
 @endsection
+@section('addjs')
+    <script src="{{ asset('backend/') }}/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="{{ asset('backend/') }}/js/dashboard5.js"></script>
+@endsection
