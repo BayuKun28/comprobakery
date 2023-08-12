@@ -44,6 +44,7 @@ Route::controller(ModulesController::class)->group(function () {
     Route::get('home_delete/{id}', 'home_delete')->name('home_delete');
     Route::post('home_switch/{id}', 'home_switch')->name('home_switch');
     Route::get('panel/about', 'about')->name('panel/about');
+    Route::post('about_save', 'about_save')->name('about_save');
     Route::get('panel/product', 'product')->name('panel/product');
     Route::get('panel/blog', 'blog')->name('panel/blog');
     Route::get('panel/add_blog', 'add_blog')->name('panel/add_blog');

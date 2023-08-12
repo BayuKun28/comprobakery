@@ -1,12 +1,8 @@
 var savemethod;
 $(function () {
-    ClassicEditor.create(document.querySelector('textarea[name="slogan"]'))
-        .then((editor) => {
-            editorInstance = editor; // Store the CKEditor instance in the variable
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+    tinymce.init({
+        selector: "textarea#slogan",
+    });
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
@@ -72,9 +68,7 @@ $(function () {
     });
     $("#createMenu").click(function () {
         savemethod = "add";
-        if (editorInstance) {
-            editorInstance.setData("");
-        }
+        tinymce.activeEditor.setContent("");
         $("#homeForm").trigger("reset");
         $("#modal-title").html("Tambah Data");
         $("#ajaxModel").modal("show");
@@ -88,7 +82,7 @@ $(function () {
             $("#modal-title").html("Edit Data");
             $("#ajaxModel").modal("show");
             $("#id_home").val(data.id);
-            editorInstance.setData(data.slogan);
+            tinymce.activeEditor.setContent(data.slogan);
             var imageUrl = urlimage + "/" + data.cover;
             $("#preview-image").attr("src", imageUrl);
         });

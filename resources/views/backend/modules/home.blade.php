@@ -120,6 +120,6 @@
         var urlswitch = "{{ route('home_switch', ['id' => ':id']) }}";
         var urlimage = "{{ asset('images') }}";
     </script>
-    <script src="{{ asset('backend/') }}/js/ckeditor.js"></script>
+    <script src="{{ asset('backend/') }}/js/tinymce.min.js"></script>
     <script src="{{ asset('backend/') }}/js/home.js"></script>
 @endsection

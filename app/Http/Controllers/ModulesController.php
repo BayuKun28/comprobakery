@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -134,12 +135,60 @@ class ModulesController extends Controller
     }
     public function about()
     {
+        $getAbout = DB::select('SELECT * FROM about');
+        $About = $getAbout = !empty($getAbout) ? $getAbout[0] : null;
+        $data['about'] = $About;
         $data['component'] = [
             'title' => 'Modules / About',
             'menu' => 'Modules',
-            'submenu' => 'About'
+            'submenu' => 'About',
+            'about' => $About
         ];
         return view('backend.modules.about', $data);
+    }
+    public function about_save(Request $request)
+    {
+        $id = 1;
+        $request->validate([
+            'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi untuk tipe dan ukuran gambar
+            'title' => 'required',
+            'content' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+        if ($request->hasFile('cover')) {
+            if ($request->file('cover')->isValid()) {
+                $imageName = time() . '.' . $request->file('cover')->extension();
+                $request->file('cover')->move(public_path('images'), $imageName);
+            } else {
+                return response()->json(['error' => 'Invalid image file.'], 422);
+            }
+            About::where('id', $id)
+                ->update(
+                    [
+                        'cover' => $imageName,
+                        'title' => $request->title,
+                        'content' => $request->content,
+                        'email' => $request->email,
+                        'phone' => $request->phone,
+                        'address' => $request->address,
+                    ]
+                );
+        } else {
+            About::where('id', $id)
+                ->update(
+                    [
+                        'title' => $request->title,
+                        'content' => $request->content,
+                        'email' => $request->email,
+                        'phone' => $request->phone,
+                        'address' => $request->address,
+                    ]
+                );
+        }
+
+        return response()->json(['success' => 'Record Update successfully.']);
     }
     public function product()
     {
